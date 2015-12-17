@@ -3,7 +3,7 @@ kwargs = {}
 
 
 setup(
-    name='Soners',
+    name='soners',
     version="1.0.0",
     url='',
     license='Apache License',
