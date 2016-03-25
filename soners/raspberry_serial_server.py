@@ -33,7 +33,7 @@ class RaspberrySerialServer(object):
     def listen(self, dev="/dev/ttyACM1", baud_rate=9600, timeout=0):
         if self.io_loop is None:
             self.io_loop = IOLoop.current()
-	self.dev = dev
+        self.dev = dev
         conn = serial.Serial(dev, baud_rate, timeout=timeout)
         conn.nonblocking()
         callback = functools.partial(self._handle_connection, conn)
