@@ -1,7 +1,7 @@
-
 from .raspberry_serial_server import RaspberrySerialServer
 from tornado.gen import coroutine
 import re
+from . import logger
 
 class SonersServer(RaspberrySerialServer):
 

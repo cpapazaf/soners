@@ -6,6 +6,7 @@ from tornado.iostream import BaseIOStream
 import functools
 import serial
 
+from . import logger
 
 class SerialIOStream(BaseIOStream):
 
