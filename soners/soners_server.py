@@ -16,12 +16,12 @@ class SonersServer(SerialListener):
     
     @coroutine
     def handle_stream(self, stream, device):
-        future = stream.read_until('\n')
+        future = stream.read_until(b'\r\n')
         if future is not None:
             result = yield future
             for spec in self.handlers:
                 regular_expression, callback = spec
-                match = re.match(regular_expression, result.rstrip())
+                match = re.match(regular_expression, str(result).rstrip())
                 if match:
                     yield callback(device, **match.groupdict())        
             #self.io_loop.add_future(future, lambda f: callback(f.result(), device))
