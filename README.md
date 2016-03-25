@@ -1,4 +1,8 @@
 # soners
+========
+[![Build Status](https://travis-ci.org/cpapazaf/soners.svg?branch=master)](https://travis-ci.org/cpapazaf/soners)
+Overview
+--------
 Event based sensor reading server based on python tornado ioloop
 
 ## Contribution
