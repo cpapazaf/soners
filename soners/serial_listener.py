@@ -1,12 +1,11 @@
-
 from tornado import gen
 from tornado.ioloop import IOLoop
 from tornado.iostream import BaseIOStream
+from . import logger
 
 import functools
 import serial
 
-from . import logger
 
 class SerialIOStream(BaseIOStream):
 
@@ -24,7 +23,7 @@ class SerialIOStream(BaseIOStream):
         return chunk
 
 
-class RaspberrySerialServer(object):
+class SerialListener(object):
     def __init__(self, io_loop=None, max_buffer_size=None,
                  read_chunk_size=None):
         self.io_loop = io_loop

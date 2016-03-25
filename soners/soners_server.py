@@ -1,9 +1,9 @@
-from .raspberry_serial_server import RaspberrySerialServer
+from .serial_listener import SerialListener
 from tornado.gen import coroutine
 import re
 from . import logger
 
-class SonersServer(RaspberrySerialServer):
+class SonersServer(SerialListener):
 
     def __init__(self, handlers, *args, **kwargs):
         self.handlers = list(handlers or [])
