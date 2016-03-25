@@ -2,6 +2,5 @@ language: python
 python:
 - "3.4"
 install:
-- pip install pylint
-script:
-pylint --errors-only
+- "pip install pylint"
+script: pylint --errors-only
