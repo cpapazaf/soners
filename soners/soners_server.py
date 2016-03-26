@@ -19,7 +19,6 @@ class SonersServer(SerialListener):
         future = stream.read_until(b'\n')
         if future is not None:
             result = yield future
-            return if not result
             for spec in self.handlers:
                 regular_expression, callback = spec
                 match = re.match(regular_expression, result.decode("utf-8").rstrip())
