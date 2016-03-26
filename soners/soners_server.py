@@ -13,16 +13,17 @@ class SonersServer(SerialListener):
             assert len(spec) in (2, 3, 4)
 
         super(SonersServer, self).__init__(*args, **kwargs)
-    
+
     @coroutine
     def handle_stream(self, stream, device):
-        future = stream.read_until(b'\r\n')
+        future = stream.read_until(b'\n')
         if future is not None:
             result = yield future
+            return if not result
             for spec in self.handlers:
                 regular_expression, callback = spec
-                match = re.match(regular_expression, str(result).rstrip())
+                match = re.match(regular_expression, result.decode("utf-8").rstrip())
                 if match:
-                    yield callback(device, **match.groupdict())        
+                    yield callback(device, **match.groupdict())
             #self.io_loop.add_future(future, lambda f: callback(f.result(), device))
-        
+
