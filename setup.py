@@ -4,7 +4,7 @@ kwargs = {}
 
 setup(
     name='soners',
-    version="1.4.0",
+    version="1.5.0",
     url='',
     license='Apache License',
     author='C.P',
