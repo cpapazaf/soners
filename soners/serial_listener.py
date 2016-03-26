@@ -19,10 +19,11 @@ class SerialIOStream(BaseIOStream):
         self.connection = None
 
     def read_from_fd(self):
-        chunk = self.connection.readline()
-        if not chunk:
-            self.close()
+        try:
+            chunk = self.connection.readline()
+        except:
             return None
+
         return chunk
 
 
