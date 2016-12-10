@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+pytest-pythonpath
+pylama
+flake8-import-order
+-r requirements.txt
+

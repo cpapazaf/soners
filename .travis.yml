@@ -1,8 +1,20 @@
 language: python
 python:
-- "3.4"
+- 3.4
+- 3.5
 install:
-- "pip install -r requirements.txt"
-- "pip install pylint"
-script: pylint --errors-only soners
-
+- pip install -r requirements-dev.txt
+- pip install .
+deploy:
+  provider: pypi
+  user: ...
+  password: ...
+  on:
+    tags: true
+    branch: master
+script:
+- py.test --cov-report= --cov=soners test/
+- pylama .
+after_success:
+- coverals
+- if [ $TRAVIS_TAG ]; then curl -X POST https://readthedocs.org/build/soners; fi
