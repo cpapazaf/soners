@@ -159,6 +159,3 @@ texinfo_documents = [
      author, 'soners', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

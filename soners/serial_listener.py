@@ -1,4 +1,3 @@
-from tornado import gen
 from tornado.ioloop import IOLoop
 from tornado.iostream import BaseIOStream
 from . import logger
@@ -11,7 +10,7 @@ class SerialIOStream(BaseIOStream):
 
     def __init__(self, connection, *args, **kwargs):
         self.connection = connection
-        #self.connection.setblocking(False)
+        # self.connection.setblocking(False)
         super(SerialIOStream, self).__init__(*args, **kwargs)
 
     def close_fd(self):
@@ -49,8 +48,8 @@ class SerialListener(object):
     def _handle_connection(self, conn, fd, event):
         try:
             stream = SerialIOStream(conn, io_loop=self.io_loop,
-                                  max_buffer_size=self.max_buffer_size,
-                                  read_chunk_size=self.read_chunk_size)
+                                    max_buffer_size=self.max_buffer_size,
+                                    read_chunk_size=self.read_chunk_size)
             future = self.handle_stream(stream, self.dev)
             if future is not None:
                 self.io_loop.add_future(future, lambda f: f.result())

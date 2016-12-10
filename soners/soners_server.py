@@ -1,7 +1,7 @@
 from .serial_listener import SerialListener
 from tornado.gen import coroutine
 import re
-from . import logger
+
 
 class SonersServer(SerialListener):
 
@@ -24,5 +24,4 @@ class SonersServer(SerialListener):
                 match = re.match(regular_expression, result.decode("utf-8").rstrip())
                 if match:
                     yield callback(device, **match.groupdict())
-            #self.io_loop.add_future(future, lambda f: callback(f.result(), device))
-
+            # self.io_loop.add_future(future, lambda f: callback(f.result(), device))
