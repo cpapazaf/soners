@@ -13,7 +13,7 @@ deploy:
     tags: true
     branch: master
 script:
-- py.test --cov-report= --cov=soners test/
+- py.test --cov-report= --cov=soners soners/test/*
 - pylama .
 after_success:
 - coverals
