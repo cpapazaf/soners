@@ -37,7 +37,8 @@ Or using last source::
 Contribution
 ------------
 
-### Creating Issues
+Creating Issues
+~~~~~~~~~~~~~~~
 
 If you find a problem please create an 
 issue in the `ticket-system`_
@@ -46,7 +47,8 @@ If you have a full working example or a log file this is also helpful.
 You should of course describe only a single issue in a single ticket and not 
 mixing up several different things into a single issue.
 
-### Creating a Pull Request
+Creating a Pull Request
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you create a pull request it is necessary to create an issue in
 the `ticket-system`_ and describe what the problem is or what kind of 
