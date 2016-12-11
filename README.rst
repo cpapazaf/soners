@@ -7,8 +7,8 @@ PySerial reader extension for Tornado
 [![Build Status](https://travis-ci.org/cpapazaf/soners.svg?branch=master)](https://travis-ci.org/cpapazaf/soners)
 
 Usage
------
-:
+-----:
+
     import tornado
     from soners.soners_server import SonersServer
 
