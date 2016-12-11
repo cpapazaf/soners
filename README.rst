@@ -64,5 +64,5 @@ License
 
 Distributed under the Apache License 2.0 license: http://opensource.org/licenses/Apache-2.0
 
-.._ticket-system: https://github.com/cpapazaf/soners/issues
+.. _ticket-system: https://github.com/cpapazaf/soners/issues
 
