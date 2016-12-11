@@ -8,7 +8,7 @@ PySerial reader extension for Tornado
 
 Usage
 -----
-
+:
     import tornado
     from soners.soners_server import SonersServer
 
@@ -26,7 +26,7 @@ Usage
 Installation
 ------------
 
-Or using last source:
+Or using last source::
 
     $ pip install git+git://github.com/cpapazaf/soners.git
 
