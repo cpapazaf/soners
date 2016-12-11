@@ -4,7 +4,8 @@ soners
 
 PySerial reader extension for Tornado
 
-[![Build Status](https://travis-ci.org/cpapazaf/soners.svg?branch=master)](https://travis-ci.org/cpapazaf/soners)
+.. image:: https://travis-ci.org/cpapazaf/soners.svg?branch=master
+    :target: https://travis-ci.org/cpapazaf/soners
 
 Usage
 -----
