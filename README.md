@@ -1,8 +1,33 @@
 # soners
+
+PySerial reader extension for Tornado
+
 [![Build Status](https://travis-ci.org/cpapazaf/soners.svg?branch=master)](https://travis-ci.org/cpapazaf/soners)
 
-## Overview
-Event based sensor reading server based on python tornado ioloop
+## Usage
+
+```python
+import tornado
+from soners.soners_server import SonersServer
+
+
+def temperature_handler(device, temperature):
+    print(temperature)
+
+
+if __name__ == '__main__':
+    my_sensor = SonersServer([('^T:(?P<temperature>.*)$', temperature_handler)])
+    my_sensor.listen()
+    tornado.ioloop.IOLoop.current().start()
+```
+
+## Installation
+
+Or using last source:
+
+```bash
+$ pip install git+git://github.com/cpapazaf/soners.git
+```
 
 ## Contribution
 

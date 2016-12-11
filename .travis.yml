@@ -7,8 +7,8 @@ install:
 - pip install .
 deploy:
   provider: pypi
-  user: ...
-  password: ...
+  user: cpapazaf
+  password: GkkP9WWQ/NkEvz02wM40u5Plgnu3712yEuiVs9VODkWRCZaEmVRwQvqRQ+UUoVMQoJ/m7pZ97iiEvW0XlmrFXXF/u1xMgdiqFbBi9t3BFc3nWY6zBup72S8AZbEvFXJlmsuz7dT6S0l1snWZtE2shGJGiPUeHlnw6RgaRQ+0fVnAJFCpVTb1GFQwx9hd1+f0F0IhLXoSacCT9YgACkgVXI/1Fr+U441TsBvMDhaZZ4BLeIKtU1/UTxp2mk9pquGgJPWHBTMftz3NTuLPUhPEwGru1VluXBqzLCziGpKh20wtkxizhliT/3SJArjZgZwevG4PzHbWCTp6kvt+8lDSgvPzCB4I2zltLRBbEgdG1kxOh8wMvrm/EdBeHSjJLuA5j2Qta+Hn2RxdrX6R/CtHo4Z7fqeYfAwauKy4FgMTGbqG/y1WVKXgaAkOC44rFHdUKNRQeCUq5DVY8LHq1+GzNGKn8jnPhdaSR4n9VdGZhUHK8fpnZ4MpZkymkq82zvUsABDEgECiSYHe0vRke9WN3iBusHvjFOfPm8IbFY4wblD5jcdy+2F6GAu4gWN1wdUdd6jKJ9FNf9rPvth2f7uZ7z3H3wzE+xqRN0MtTO0oh1no1eZsDR1TtDe4ryi2ghuAybjBVn4u1xquD0Ifd5RFEjE5gW+dQ9S2p9n9+xInxKE=
   on:
     tags: true
     branch: master
