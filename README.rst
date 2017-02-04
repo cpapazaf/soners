@@ -4,6 +4,8 @@ soners
 
 PySerial reader extension for Tornado
 
+.. image:: https://badge.fury.io/py/soners.png
+    :target: http://badge.fury.io/py/soners
 .. image:: https://travis-ci.org/cpapazaf/soners.svg?branch=master
     :target: https://travis-ci.org/cpapazaf/soners
 

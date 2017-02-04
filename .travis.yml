@@ -10,15 +10,6 @@ script:
 deploy:
   - provider: pypi
     distributions: sdist
-    server: https://testpypi.python.org/pypi
-    user: cpapazaf
-    password:
-      secure: EMCP1TGyDy7If0GXLA4KHZoS45AjI7gHLQJnkAdmfivupCzel8K0xLgHtOf8RoCP2zjL2yTvHALBq84qw05+xNNQMbVcudcEofFU+PQQS+BUYKmv2NLMX6azyjPu2B0t003x5MlPs6wLC6U+Ge2tOgqHEUh0TbTqW2WC+3kV7NtcXnwvkGqYrC3qP83hi4942EZ4tn4EBlWfNGXlcrnv6ex2FCmBzZsKXCq6qPtsRYiY+bD+BCk1YR+c3VU9SeoAoH7G/H0GCMUvW/cHl41lPTVnTLa9hnYc3rMqmQUlCHU5ZaHJWKryjaFdUPV6cY/BWM3sYA6M6E0YK/fnsH7v9b4XhZNvKWRfK296fs5wfuD9uFojEswe2TuRKOOZpdGO4OGso2CcO4lwS948hF4YuakJGn+xHumDpKuAgt5DQ9O7rgWGBck2r8sU7mDfqrgzdpzh9UZ8P6RERwEdL5V3+F4pcmSeiiJJMs0h2I9ucRvdPsPcHxMpqc+KjdAy4YolVCkABfZSbbpMnA7nhR45Lny+/tVf7dTUBVxc2le4w86A/zgbg3nqm3n23bEGyz0eaJuzXUYdpXAzGwlesmBmrSNwIDUh67e8Ge9ull/H5HvLQ8DRMbHfRFh+Z6fVKpz2wmHknIX0POw5z7eM4GqDXhX9yRZepGR3mq8i6iROYhM=
-    on:
-      tags: false
-      branch: master
-  - provider: pypi
-    distributions: sdist
     user: cpapazaf
     password:
       secure: EMCP1TGyDy7If0GXLA4KHZoS45AjI7gHLQJnkAdmfivupCzel8K0xLgHtOf8RoCP2zjL2yTvHALBq84qw05+xNNQMbVcudcEofFU+PQQS+BUYKmv2NLMX6azyjPu2B0t003x5MlPs6wLC6U+Ge2tOgqHEUh0TbTqW2WC+3kV7NtcXnwvkGqYrC3qP83hi4942EZ4tn4EBlWfNGXlcrnv6ex2FCmBzZsKXCq6qPtsRYiY+bD+BCk1YR+c3VU9SeoAoH7G/H0GCMUvW/cHl41lPTVnTLa9hnYc3rMqmQUlCHU5ZaHJWKryjaFdUPV6cY/BWM3sYA6M6E0YK/fnsH7v9b4XhZNvKWRfK296fs5wfuD9uFojEswe2TuRKOOZpdGO4OGso2CcO4lwS948hF4YuakJGn+xHumDpKuAgt5DQ9O7rgWGBck2r8sU7mDfqrgzdpzh9UZ8P6RERwEdL5V3+F4pcmSeiiJJMs0h2I9ucRvdPsPcHxMpqc+KjdAy4YolVCkABfZSbbpMnA7nhR45Lny+/tVf7dTUBVxc2le4w86A/zgbg3nqm3n23bEGyz0eaJuzXUYdpXAzGwlesmBmrSNwIDUh67e8Ge9ull/H5HvLQ8DRMbHfRFh+Z6fVKpz2wmHknIX0POw5z7eM4GqDXhX9yRZepGR3mq8i6iROYhM=
