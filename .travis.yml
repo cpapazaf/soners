@@ -1,23 +1,34 @@
 language: python
 python:
-    - 3.4
+  - 3.4
 install:
-    - pip install -r requirements-dev.txt
-    - pip install .
+  - pip install -r requirements-dev.txt
+  - pip install .
+script:
+  - py.test --cov-report= --cov=soners soners/test/*
+  - pylama .
 deploy:
     # test pypi
   - provider: pypi
     distributions: sdist
     server: https://testpypi.python.org/pypi
-    user: cpapazaf
+    user: "cpapazaf"
     password:
-      secure: fvJDtjW8nP1sjgYACbcDIxVy3W3c6mQI3oKNnbIGlvUIMkqEQW0xgsyc6oMOxqULvqUNeFdLbGi89dUptJ7nyAV23AcG8YmTzhwYdgAQSSGMEveaAgqLwO2VKbeCDwSTPDcdPQerT++Lu9xSzQBO0M+kdvf5pkPL0TPz0nk95ECUOvj4SxC6uYB15RXmj5zcOvIWYMcNjcgyiE1GtyPJm03dQJQy6jphm23+zUR0XffoxDx4R0oJVLMZVvGKCLSolraLmqOBhxG5ePKdS+eKXXsAWZ4JTuHINwlIzkx8xoJGqkjOxM60opgkXtfosxTf4xcVk9hj32VFWMwjoYBACXPIu5rsfyFo0XZ95QGenSqcRJm7KDo6+PaevBG86ya9Hi7bhMbjgqwUMSJZ5hG3wUxT5gJjvWuC/0lxK9iHjSJFRuu8aFaNcX9lproU/fgx0EMMqLWkNGVcdqxdKPtkFnOEnLdaDgRFw37CKprGk0kbug7C6r0F4o25PIk1m85UwW4GJqMsTyF4EKIhYIz/QV4iHNNGG1zWxT0YemIY6oNnpifBiTamMPM4NA5A0dcQOuyHi2BMUBSLs2cDNJLf6fF6jXomv/8trLzaUPawvh4LxZdkd7uwKb79w13WLghsT3PMZdtXb/e0eHFv14VO3kvImHfMz6N19PT0ImU1ssQ= 
+      secure: "qr6Yg8b84k27t+nXnUguAMbUEtz4ksFWU+CkG56Yo9CPUm1fSNA1V8t705sahpTYuF7RqtWLcbG7AidFma8jyYJgQfwGs+Np/RaxtbVYAoFpnesS7GceNuRSnIMjRgn4mPynmCdwWi9KAMBhqhyp3SoKVj3aMj+HmplYD1Nh3pOJpiLg3OBfvRYPP1eOtN3fyhb5P5jxwz+NpP6zsb33fI9EYbxTxpUOTfrWf5xcyYRSCQwdLgXO5I5YP/gcWRzo18Vvlo+fR/EaQOJx88eMZ1JjKiw3pPn/erThCEcBj2hVAVKmEK3NpC+EJwevHgryAcDNIR6DMcpifg7I1DTiocn6Gi4jD96HMgeShHmM0qTLYzffM8U52u3mKSqHuWG92bUodxh9If3CkYsB83+9oTwQwWyIvXwlYnycTh7/7b7mzs9RRDPtfrK4dCX5kRbfHxjay/tJIWMs6Scg+lFXP1aHaihLSVpjnwGO/jeyUujsHkdaQIaVvjTvV1djaZyfWjgj/k5k+CXBWF5laRtuicGPxKR8FSOSfUXDaRP2AjMvs6e43jRHXfJPEm6/larsFHqkHky1ahXFUMa+c3GZAnQ6sWsQRQFnnVpvJxWTgZrbwRtC38U1iLgGGy1mx+gmXBKjFqW+Q6ijN/uBgsN4CKzqG7Bhc3eediSEcf86MuQ="
     on:
       tags: false
       branch: master
-script:
-  - py.test --cov-report= --cov=soners soners/test/*
-  - pylama .
+      condition: $TRAVIS_PYTHON_VERSION = "3.4"
+    # production pypi
+  - provider: pypi
+    distributions: sdist
+    user: "cpapazaf"
+    password:
+      secure: "qr6Yg8b84k27t+nXnUguAMbUEtz4ksFWU+CkG56Yo9CPUm1fSNA1V8t705sahpTYuF7RqtWLcbG7AidFma8jyYJgQfwGs+Np/RaxtbVYAoFpnesS7GceNuRSnIMjRgn4mPynmCdwWi9KAMBhqhyp3SoKVj3aMj+HmplYD1Nh3pOJpiLg3OBfvRYPP1eOtN3fyhb5P5jxwz+NpP6zsb33fI9EYbxTxpUOTfrWf5xcyYRSCQwdLgXO5I5YP/gcWRzo18Vvlo+fR/EaQOJx88eMZ1JjKiw3pPn/erThCEcBj2hVAVKmEK3NpC+EJwevHgryAcDNIR6DMcpifg7I1DTiocn6Gi4jD96HMgeShHmM0qTLYzffM8U52u3mKSqHuWG92bUodxh9If3CkYsB83+9oTwQwWyIvXwlYnycTh7/7b7mzs9RRDPtfrK4dCX5kRbfHxjay/tJIWMs6Scg+lFXP1aHaihLSVpjnwGO/jeyUujsHkdaQIaVvjTvV1djaZyfWjgj/k5k+CXBWF5laRtuicGPxKR8FSOSfUXDaRP2AjMvs6e43jRHXfJPEm6/larsFHqkHky1ahXFUMa+c3GZAnQ6sWsQRQFnnVpvJxWTgZrbwRtC38U1iLgGGy1mx+gmXBKjFqW+Q6ijN/uBgsN4CKzqG7Bhc3eediSEcf86MuQ="
+    on:
+      tags: true
+      branch: master
+      condition: $TRAVIS_PYTHON_VERSION = "3.4"
 after_success:
   - coverals
   - if [ $TRAVIS_TAG ]; then curl -X POST https://readthedocs.org/build/soners; fi

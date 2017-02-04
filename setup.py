@@ -1,6 +1,9 @@
-from setuptools import setup
-kwargs = {}
+#!/usr/bin/env python
 
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 setup(
     name='soners',
@@ -11,12 +14,11 @@ setup(
     author_email='xpapazaf@gmail.com',
     description='PySerial reader extension for Tornado',
     long_description=__doc__,
-    packages=['soners'],
     include_package_data=True,
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'tornado>=4.2.1',
+        'tornado >= 4.2.1',
     ],
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
@@ -25,5 +27,8 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
-    **kwargs
+    packages=['soners'],
+    package_data={'': ['README.rst']},
+    package_dir={'soners': 'soners'},
+    include_package_data=True,
 )
