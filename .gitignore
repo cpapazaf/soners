@@ -3,6 +3,7 @@
 *.so
 *.class
 *~
+*.egg-info
 build/
 /dist/
 .coverage
