@@ -14,7 +14,6 @@ setup(
     author_email='xpapazaf@gmail.com',
     description='PySerial reader extension for Tornado',
     long_description=__doc__,
-    include_package_data=True,
     zip_safe=False,
     platforms='any',
     install_requires=[
