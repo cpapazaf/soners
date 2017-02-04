@@ -20,7 +20,7 @@ class SerialIOStream(BaseIOStream):
     def read_from_fd(self):
         try:
             chunk = self.connection.readline()
-        except:
+        except Exception:
             return None
 
         return chunk
