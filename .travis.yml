@@ -1,20 +1,23 @@
 language: python
 python:
-- 3.4
+    - 3.4
 install:
-- pip install -r requirements-dev.txt
-- pip install .
+    - pip install -r requirements-dev.txt
+    - pip install .
 deploy:
-  provider: pypi
-  user: cpapazaf
-  password:
-    secure: jhytSGVXCmLCGWZTsahbVKGXsp3HdR+PJFK8u3TnL1x4g+S6pdZoHc9SMFDvDtMdBvDmaryQyaXKGfD6Nc/dfOfP4hJuzOvEeJfQOjpZzNpzaFgdA61eKEuiB/9MghCNcmljeW0XEcujkbj2y22qQM7Gqc7ejv3DAgzzs+MTY3kEXh3tM8nfTfibF8wB8iCwsHBFFOD7QNZL3fPFdwEsgnsYYaqGvi+dd44XtHAAJ/X/s67rixFrsavpbPAZH7hOq0eOHJ+GyvlRTH5b0mlcTywlZqTnHVCiN8zWaTdZksMMf9KcbquBwAAinmXImor9hZINvewpB40gnk/1p1zxD9jFpcYOwYwBwWprthWSCSxYFvfu84PIgXcFn3f7POdzWG2qyZSsIuXUmffCCX8+TNulG0dYMZZoxxrNeaoyA2wBqfS9Ag4vUM7FRfN+VxUxeazW1zAFQu7OILvtF+q18t5w6nKrjfpHDNSLUQqtE2a5Jpz7WKLI012y7rGgHoV6oluFhZ+mSAyZu6Rk8yJD+W+8cZc8iAIrBSFhFsWnZxJU5+Linf4iH6etautctkbbojPWeVEjekNeMguSZbysuB02zHcCz7PHtDIKt1XRyeFKl/2S+DkRZsONVzA/JeizJkOHI7huqFpNS5lyxXp3Jqjiz7ckRJdKFuQCZCt9UT8=
-  on:
-    tags: true
-    branch: master
+    # test pypi
+  - provider: pypi
+    distributions: sdist
+    server: https://testpypi.python.org/pypi
+    user: cpapazaf
+    password:
+      secure: fvJDtjW8nP1sjgYACbcDIxVy3W3c6mQI3oKNnbIGlvUIMkqEQW0xgsyc6oMOxqULvqUNeFdLbGi89dUptJ7nyAV23AcG8YmTzhwYdgAQSSGMEveaAgqLwO2VKbeCDwSTPDcdPQerT++Lu9xSzQBO0M+kdvf5pkPL0TPz0nk95ECUOvj4SxC6uYB15RXmj5zcOvIWYMcNjcgyiE1GtyPJm03dQJQy6jphm23+zUR0XffoxDx4R0oJVLMZVvGKCLSolraLmqOBhxG5ePKdS+eKXXsAWZ4JTuHINwlIzkx8xoJGqkjOxM60opgkXtfosxTf4xcVk9hj32VFWMwjoYBACXPIu5rsfyFo0XZ95QGenSqcRJm7KDo6+PaevBG86ya9Hi7bhMbjgqwUMSJZ5hG3wUxT5gJjvWuC/0lxK9iHjSJFRuu8aFaNcX9lproU/fgx0EMMqLWkNGVcdqxdKPtkFnOEnLdaDgRFw37CKprGk0kbug7C6r0F4o25PIk1m85UwW4GJqMsTyF4EKIhYIz/QV4iHNNGG1zWxT0YemIY6oNnpifBiTamMPM4NA5A0dcQOuyHi2BMUBSLs2cDNJLf6fF6jXomv/8trLzaUPawvh4LxZdkd7uwKb79w13WLghsT3PMZdtXb/e0eHFv14VO3kvImHfMz6N19PT0ImU1ssQ= 
+    on:
+      tags: false
+      branch: master
 script:
-- py.test --cov-report= --cov=soners soners/test/*
-- pylama .
+  - py.test --cov-report= --cov=soners soners/test/*
+  - pylama .
 after_success:
-- coverals
-- if [ $TRAVIS_TAG ]; then curl -X POST https://readthedocs.org/build/soners; fi
+  - coverals
+  - if [ $TRAVIS_TAG ]; then curl -X POST https://readthedocs.org/build/soners; fi
