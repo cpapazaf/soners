@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='soners',
-    version="1.0.4",
+    version="1.0.5",
     url='https://github.com/cpapazaf/soners',
     license='Apache License',
     author='Christos Papazafeiropoulos',
